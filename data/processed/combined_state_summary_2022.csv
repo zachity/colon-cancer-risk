@@ -1,0 +1,14 @@
+StateFIPS,State,Abbrev,obesity_rate,smoking_rate,incidence_rate_adj,incidence_cases
+4,Arizona,AZ,11.88,7.578,31.9,2945.0
+6,California,CA,7.91,6.309,34.4,15465.0
+8,Colorado,CO,8.845,6.656,31.1,2031.0
+19,Iowa,IA,11.268,9.915,42.3,1648.0
+20,Kansas,KS,10.519,8.446,38.6,1342.0
+23,Maine,ME,8.401,9.75,36.2,694.0
+24,Maryland,MD,8.974,7.599,33.7,2523.0
+25,Massachusetts,MA,6.86,5.93,29.8,2565.0
+26,Michigan,MI,8.229,8.119,36.2,4529.0
+31,Nebraska,NE,15.237,10.076,36.8,850.0
+36,New York,NY,6.693,7.357,36.5,9049.0
+39,Ohio,OH,12.039,11.193,36.4,5377.0
+40,Oklahoma,OK,14.453,8.556,41.4,1912.0

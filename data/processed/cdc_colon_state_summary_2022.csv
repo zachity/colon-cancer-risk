@@ -1,0 +1,52 @@
+State,Abbrev,age_adjusted_rate,total_cases
+Alabama,AL,40.9,2568.0
+Alaska,AK,40.8,306.0
+Arizona,AZ,31.9,2945.0
+Arkansas,AR,41.5,1541.0
+California,CA,34.4,15465.0
+Colorado,CO,31.1,2031.0
+Connecticut,CT,36.1,1637.0
+Delaware,DE,35.0,468.0
+District of Columbia,DC,34.7,229.0
+Florida,FL,36.6,11433.0
+Georgia,GA,40.7,5004.0
+Hawaii,HI,39.4,736.0
+Idaho,ID,33.4,745.0
+Illinois,IL,39.5,6020.0
+Indiana,IN,38.8,3132.0
+Iowa,IA,42.3,1648.0
+Kansas,KS,38.6,1342.0
+Kentucky,KY,46.1,2534.0
+Louisiana,LA,42.3,2323.0
+Maine,ME,36.2,694.0
+Maryland,MD,33.7,2523.0
+Massachusetts,MA,29.8,2565.0
+Michigan,MI,36.2,4529.0
+Minnesota,MN,37.4,2563.0
+Mississippi,MS,43.7,1583.0
+Missouri,MO,41.4,3143.0
+Montana,MT,34.4,506.0
+Nebraska,NE,36.8,850.0
+Nevada,NV,37.7,1447.0
+New Hampshire,NH,33.2,627.0
+New Jersey,NJ,39.7,4597.0
+New Mexico,NM,33.5,881.0
+New York,NY,36.5,9049.0
+North Carolina,NC,35.4,4518.0
+North Dakota,ND,39.1,344.0
+Ohio,OH,36.4,5377.0
+Oklahoma,OK,41.4,1912.0
+Oregon,OR,31.0,1644.0
+Pennsylvania,PA,36.8,6270.0
+Rhode Island,RI,30.9,421.0
+South Carolina,SC,35.8,2410.0
+South Dakota,SD,39.3,424.0
+Tennessee,TN,37.7,3221.0
+Texas,TX,38.7,12098.0
+Utah,UT,31.5,956.0
+Vermont,VT,30.3,271.0
+Virginia,VA,33.5,3454.0
+Washington,WA,32.9,2956.0
+West Virginia,WV,44.3,1116.0
+Wisconsin,WI,35.9,2608.0
+Wyoming,WY,37.7,267.0
