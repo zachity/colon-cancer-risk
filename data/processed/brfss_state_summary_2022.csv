@@ -1,0 +1,55 @@
+StateFIPS,State,Abbrev,obesity_rate,smoking_rate
+1,Alabama,AL,35.703,14.895
+2,Alaska,AK,28.789,14.699
+4,Arizona,AZ,29.385,11.471
+5,Arkansas,AR,32.196,16.56
+6,California,CA,23.565,8.59
+8,Colorado,CO,22.312,9.821
+9,Connecticut,CT,25.333,8.78
+10,Delaware,DE,33.479,11.783
+11,District of Columbia,DC,21.269,9.579
+12,Florida,FL,27.015,9.927
+13,Georgia,GA,31.439,11.052
+15,Hawaii,HI,24.127,9.351
+16,Idaho,ID,30.103,11.459
+17,Illinois,IL,30.488,11.468
+18,Indiana,IN,31.272,14.102
+19,Iowa,IA,33.892,13.923
+20,Kansas,KS,32.003,13.526
+21,Kentucky,KY,34.039,16.626
+22,Louisiana,LA,36.328,15.32
+23,Maine,ME,30.367,14.461
+24,Maryland,MD,28.297,8.543
+25,Massachusetts,MA,23.654,9.736
+26,Michigan,MI,29.638,13.639
+27,Minnesota,MN,30.102,11.915
+28,Mississippi,MS,36.206,16.385
+29,Missouri,MO,33.47,16.071
+30,Montana,MT,28.028,14.546
+31,Nebraska,NE,32.05,12.311
+32,Nevada,NV,30.01,13.508
+33,New Hampshire,NH,26.228,9.842
+34,New Jersey,NJ,23.704,8.895
+35,New Mexico,NM,30.438,14.196
+36,New York,NY,24.736,9.816
+37,North Carolina,NC,30.275,13.709
+38,North Dakota,ND,32.171,14.492
+39,Ohio,OH,34.042,15.488
+40,Oklahoma,OK,36.142,14.413
+41,Oregon,OR,28.074,11.883
+42,Pennsylvania,PA,30.319,14.187
+44,Rhode Island,RI,26.509,10.549
+45,South Carolina,SC,30.153,13.413
+46,South Dakota,SD,32.62,13.669
+47,Tennessee,TN,34.277,16.938
+48,Texas,TX,29.413,10.46
+49,Utah,UT,27.319,6.167
+50,Vermont,VT,23.322,11.675
+51,Virginia,VA,31.385,11.123
+53,Washington,WA,27.131,9.138
+54,West Virginia,WV,38.131,19.95
+55,Wisconsin,WI,33.409,13.001
+56,Wyoming,WY,31.542,14.462
+66,Guam,GU,29.58,17.623
+72,Puerto Rico,PR,32.399,9.262
+78,U.S. Virgin Islands,VI,28.069,3.456
