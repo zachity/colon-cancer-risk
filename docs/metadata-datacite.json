@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "http://datacite.org/schema/kernel-4",
+  "identifier": {
+    "identifierType": "DOI",
+    "identifier": "10.00000/placeholder.colon-cancer-behavioral-2022"
+  },
+  "creators": [
+    {
+      "creatorName": "Conlee, Zachariah",
+      "givenName": "Zachariah",
+      "familyName": "Conlee",
+      "affiliation": "University of Illinois"
+    }
+  ],
+  "titles": [
+    {
+      "title": "Curated State-Level Dataset of Behavioral Predictors and Colorectal Cancer Incidence (BRFSS 2022 + USCS 2022)"
+    }
+  ],
+  "publisher": "University of Illinois",
+  "publicationYear": "2025",
+  "resourceType": {
+    "resourceTypeGeneral": "Dataset"
+  },
+  "descriptions": [
+    {
+      "descriptionType": "Abstract",
+      "description": "This dataset integrates behavioral health indicators from the 2022 Behavioral Risk Factor Surveillance System (BRFSS) with age-adjusted colorectal cancer incidence rates from the U.S. Cancer Statistics (USCS) registry via CDC WONDER. The curated dataset includes state-level prevalence of obesity, smoking, and corresponding colon and rectum cancer incidence for all 50 U.S. states and the District of Columbia. The dataset was produced as part of a data curation workflow involving extraction, cleaning, harmonization, and integration of heterogeneous public health sources. Raw BRFSS and USCS data are not redistributed due to CDC licensing restrictions; users must obtain the raw data directly from the original sources."
+    }
+  ],
+  "subjects": [
+    { "subject": "Public health" },
+    { "subject": "Cancer epidemiology" },
+    { "subject": "Behavioral risk factors" },
+    { "subject": "Survey data" },
+    { "subject": "Data curation" }
+  ],
+  "contributors": [
+    {
+      "contributorType": "Researcher",
+      "contributorName": "Conlee, Zachariah"
+    }
+  ],
+  "dates": [
+    {
+      "date": "2025-12-01",
+      "dateType": "Created"
+    }
+  ],
+  "language": "en",
+  "version": "1.0.0",
+  "rightsList": [
+    {
+      "rights": "Raw BRFSS and USCS data cannot be redistributed. Users must obtain raw data directly from the CDC per official terms of use.",
+      "rightsUri": "https://www.cdc.gov/brfss/data_documentation/index.htm"
+    }
+  ],
+  "relatedIdentifiers": [
+    {
+      "relationType": "References",
+      "relatedIdentifierType": "URL",
+      "relatedIdentifier": "https://www.cdc.gov/brfss/annual_data/annual_2022.html"
+    },
+    {
+      "relationType": "References",
+      "relatedIdentifierType": "URL",
+      "relatedIdentifier": "https://wonder.cdc.gov/cancer.html"
+    },
+    {
+      "relationType": "IsDerivedFrom",
+      "relatedIdentifierType": "URL",
+      "relatedIdentifier": "https://wonder.cdc.gov/"
+    }
+  ],
+  "formats": [
+    "CSV",
+    "JSON",
+    "Python scripts (*.py)"
+  ],
+  "size": "Approximately 53 KB (single CSV file)",
+  "fundingReferences": [],
+  "geoLocations": [
+    {
+      "geoLocationPlace": "United States (50 states and the District of Columbia)"
+    }
+  ]
+}

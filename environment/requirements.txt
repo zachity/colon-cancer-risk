@@ -1,0 +1,18 @@
+# Core scientific Python stack
+pandas
+numpy
+scipy
+
+# Plotting / EDA
+matplotlib
+seaborn
+
+# Modeling
+scikit-learn
+statsmodels
+
+# BRFSS XPT reading
+pyreadstat
+
+# Notebook support (optional but recommended)
+jupyter

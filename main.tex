@@ -1,0 +1,158 @@
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[american]{babel}
+\usepackage[style=apa]{biblatex}
+
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{main.bib}
+
+\setstretch{1.2}
+
+\title{Colon Cancer Risk Analysis:\\
+Behavioral Predictors at the U.S. State Level}
+\author{Zachariah Conlee}
+\date{December 2025}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This project investigates how modifiable behavioral factors, specifically obesity and smoking, relate to age adjusted colorectal cancer incidence across U.S. states. Using BRFSS 2022 survey data \parencite{cdc2023brfss} and USCS cancer incidence data retrieved through CDC WONDER \parencite{cdc2024uscs}, the project constructs a curated, integrated dataset suitable for epidemiological exploration. The work reflects the full lifecycle of data curation including acquisition, cleaning, integration, metadata generation, workflow automation, and ethical evaluation \parencite{lord2004}. The resulting dataset is documented, reproducible, and packaged using metadata standards such as DataCite \parencite{group2021} and the FAIR principles \parencite{wilkinson2016}.
+\end{abstract}
+
+\section{Introduction and Project Motivation}
+
+This semester, I experienced a profound personal loss when my mother passed away after battling cancer. Walking alongside her through diagnosis, treatment, and the progression of the disease made the realities of cancer far more immediate and deeply human than statistics alone can convey. Her experience motivated me to use this project as an opportunity to engage more deeply with cancer related public health data, not only as an academic exercise but as a way to better understand the broader landscape of cancer risk and prevention in the United States.
+
+Colorectal cancer is among the most prevalent and most preventable forms of cancer nationwide. Although this project does not attempt to model individual risk or contribute clinical insights, it explores a question that emerged naturally from personal reflection and public health interest:
+
+\begin{quote}
+How do modifiable behavioral factors, such as obesity and smoking, relate to variation in colorectal cancer incidence across U.S. states?
+\end{quote}
+
+To investigate this question, the project curates and integrates two major national datasets: BRFSS \parencite{cdc2023brfss} and the USCS registry accessed through CDC WONDER \parencite{cdc2024uscs}. Both datasets are widely used in public health research but present substantial heterogeneity, documentation challenges, and structural complexity, which makes them well suited for a data curation focused project.
+
+\section{Dataset Profiles}
+
+\subsection{BRFSS 2022 Behavioral Health Indicators}
+
+BRFSS \parencite{cdc2023brfss} is the largest continuously collected public health survey system in the world. Raw BRFSS files are released in SAS Transport (XPT) format and require specialized extraction and careful interpretation of coded values.
+
+Variables used include:
+\begin{itemize}
+    \item \texttt{\_STATE}: FIPS coded state identifier
+    \item \texttt{\_RFSMOK3}: recoded smoking status
+    \item \texttt{\_OBESITY3}: obesity indicator based on BMI
+\end{itemize}
+
+Curation tasks included recoding categorical values, filtering invalid responses, and aggregating millions of observations into state level prevalence estimates for obesity and smoking. Because BRFSS is self reported survey data, additional interpretation is required. Nonresponse patterns, social desirability bias, and variations in administration across states can influence prevalence estimates.
+
+\subsection{USCS and CDC WONDER Incidence Data}
+
+Age adjusted colorectal cancer incidence data were obtained from USCS via CDC WONDER \parencite{cdc2024uscs}. These provide standardized annual incidence rates per 100,000 population.
+
+Challenges included:
+\begin{itemize}
+    \item suppressed incidence counts for small populations,
+    \item inconsistent formatting in manual WONDER downloads,
+    \item aligning state identifiers across datasets.
+\end{itemize}
+
+\subsection{Final Integrated Dataset}
+
+The final curated dataset includes:
+\begin{itemize}
+    \item 51 geographic units (50 states and DC),
+    \item obesity prevalence,
+    \item smoking prevalence,
+    \item age adjusted colon and rectum cancer incidence.
+\end{itemize}
+
+\section{Data Curation Workflow}
+
+\subsection{Extraction}
+
+The script \texttt{brfss\_2022\_state\_summary.py} extracts BRFSS behavioral indicators and computes state level prevalence measures \parencite{cdc2023brfss}.  
+The script \texttt{cdc\_colon\_state\_summaries.py} processes USCS incidence exports, normalizes fields, and handles suppressed values \parencite{cdc2024uscs}.
+
+\subsection{Integration}
+
+The script \texttt{combine\_state\_summaries.py} merges behavioral and incidence data while resolving identifier inconsistencies and suppressed values. This process reflects challenges common in the literature on data wrangling \parencite{terrizzano2015}, reinforcing the need for curated and well structured data pipelines.
+
+\subsection{Cleaning and Quality Checks}
+
+Quality validation steps ensured:
+\begin{itemize}
+    \item prevalence values fell within expected statistical ranges,
+    \item all 51 state level records were present,
+    \item incidence rates aligned with national benchmarks.
+\end{itemize}
+
+\section{Lifecycle Model Alignment (M1)}
+
+This project follows the CRISP DM framework \parencite{chapman2000}, which emphasizes iterative data understanding and preparation. Beyond CRISP DM, the workflow reflects concepts from key lifecycle readings.
+
+Plale and Kouper \parencite{plale2017} emphasize that scientific data move through multiple interconnected stages including acquisition, curation, use, and preservation. Their framing shaped the design of this project’s structured workflow and use of documentation at each stage.
+
+Terrizzano et al. \parencite{terrizzano2015} highlight the difficulty of transforming wild data into structured and reusable forms. This maps directly onto the challenges of harmonizing BRFSS survey codes with USCS incidence tables.
+
+Hanson et al. \parencite{hanson2012} demonstrate how poor documentation undermines data reuse. Their caution informed the project's emphasis on clear metadata, structured directories, and reproducible scripts.
+
+\section{Ethical, Legal, and Policy Considerations (M2)}
+
+Ethical considerations included avoiding ecological fallacy when interpreting state level public health data, acknowledging biases from self reported data, communicating associations without implying causality, and respecting CDC rules for suppressed values.
+
+The Menlo Report \parencite{bailey2012} extends Belmont principles to data intensive research. Respect for persons informed transparency about data limitations. Beneficence guided careful communication to avoid harm through misinterpretation. Justice informed caution in discussing geographic disparities. Respect for law and public interest required compliance with CDC’s data use policies.
+
+\section{Data Models and Abstractions (M3 to M5)}
+
+The curated dataset uses a relational tabular model where states function as entities with behavioral and incidence attributes. This aligns with metadata and identifier practices recommended by DataCite \parencite{group2021} and Schema.org \parencite{schemaorg2024}, supporting reusable, machine readable data products.
+
+\section{Metadata and Documentation (M8)}
+
+Metadata were created following the DataCite schema \parencite{group2021} and FAIR principles \parencite{wilkinson2016}. Documentation includes a README, codebook, and scripts with clear input and output expectations.
+
+A summary of key variables appears below.
+
+\begin{longtable}{lllll}
+\toprule
+\textbf{Variable} & \textbf{Type} & \textbf{Description} & \textbf{Range} & \textbf{Source} \\
+\midrule
+state & string & U.S. state or DC & 51 values & BRFSS/USCS \\
+obesity\_prevalence & float & percent adults obese & 20 to 45 & BRFSS \\
+smoking\_prevalence & float & percent adults smoking & 8 to 25 & BRFSS \\
+cancer\_incidence & float & incidence per 100k & 30 to 55 & USCS \\
+\bottomrule
+\end{longtable}
+
+Sources: BRFSS 2022 \parencite{cdc2023brfss} and USCS via CDC WONDER \parencite{cdc2024uscs}.
+
+\section{Findings, Challenges, and Lessons Learned}
+
+Exploratory analyses showed directional associations between behavioral risk factors and cancer incidence. Variation across states suggests moderating influences such as screening access, socioeconomic conditions, and reporting differences.
+
+Challenges included interpreting suppressed values, harmonizing inconsistent identifiers, and decoding complex survey fields. These experiences mirror themes described by Terrizzano et al. \parencite{terrizzano2015}, who emphasize that most analytic effort lies in wrangling diverse and poorly structured data.
+
+Lessons learned include the importance of early metadata design, clear documentation, and recognition that public health data are shaped by methodological choices rather than being simple raw observations.
+
+\section{Reproducibility, Automation, and Dissemination (M12 and M15)}
+
+This project includes a complete reproducible workflow with structured directories, environment specifications, and automation scripts. Anyone with BRFSS and USCS raw inputs can regenerate the curated dataset.
+
+The workflow follows FAIR and DataCite recommendations \parencite{group2021, wilkinson2016}, promoting reuse in analysis, visualization, and future coursework.
+
+\section{Conclusion}
+
+This project demonstrates the full lifecycle of data curation including acquisition, wrangling, integration, documentation, ethics, and dissemination. It is grounded in course readings on lifecycle models, data wrangling, and ethical stewardship \parencite{bailey2012, hanson2012, plale2017, terrizzano2015}. Motivated by a personal connection to cancer, the work emphasizes careful, transparent, and responsible data practices in public health contexts.
+
+\printbibliography
+
+\end{document}
