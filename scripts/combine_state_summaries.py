@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-# Paths are relative to the scripts/ folder
+
 BRFSS = Path("..") / "data" / "processed" / "brfss_state_summary_2022.csv"
 CDC   = Path("..") / "data" / "processed" / "colon_state_summary_2022.csv"
 OUT   = Path("..") / "data" / "processed" / "combined_state_summary_2022.csv"
@@ -9,7 +9,7 @@ OUT   = Path("..") / "data" / "processed" / "combined_state_summary_2022.csv"
 brf = pd.read_csv(BRFSS)
 cdc = pd.read_csv(CDC)
 
-# Keep only the 50 states + DC
+
 valid = set([
     "AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI","ID","IL","IN","IA","KS","KY",
     "LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH",

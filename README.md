@@ -63,6 +63,8 @@ This repository provides **processing scripts only**, not raw data.
 
 ## Environment Setup
 
+The environment may be recreated using pip install -r environment/requirements.txt
+
 Install required Python packages:
 pip install pandas numpy matplotlib seaborn statsmodels scikit-learn pyreadstat
 

@@ -66,30 +66,30 @@ def main():
     df.columns = [str(c) for c in df.columns]
     print(f"Loaded {len(df)} rows, {df.shape[1]} columns")
 
-    # Required columns
+    
     for req in ["_STATE", "_BMI5"]:
         if req not in df.columns:
             raise ValueError(f"Missing required column in file: {req}")
 
-    # Weight column
+    
     weight_col = find_weight_column(df.columns, override=args.weight_column)
     if weight_col is None:
         print("WARNING: No weight column found. Proceeding with UNWEIGHTED percentages.")
     else:
         print(f"Using weight column: {weight_col}")
 
-    # Obesity indicator (BMI5 is BMI*100)
+    
     bmi = pd.to_numeric(df["_BMI5"], errors="coerce")
     obese = (bmi >= 3000) & (bmi < 9999)
 
-    # Smoking indicator
+    
     if "_SMOKER3" in df.columns:
         sm = pd.to_numeric(df["_SMOKER3"], errors="coerce")
         current_smoker = sm.isin([1, 2])
     else:
         current_smoker = pd.Series(index=df.index, dtype="float")
 
-    # Colonoscopy indicator (optional)
+    
     colo_series = None
     if args.include_colonoscopy:
         for v in POSSIBLE_COLO_VARS:
@@ -101,7 +101,7 @@ def main():
         if colo_series is None:
             print("No recognized colonoscopy/sigmoidoscopy variable found; skipping that metric.")
 
-    # State FIPS
+    
     df["_STATE"] = pd.to_numeric(df["_STATE"], errors="coerce").astype("Int64")
     weights = None if weight_col is None else pd.to_numeric(df[weight_col], errors="coerce")
 

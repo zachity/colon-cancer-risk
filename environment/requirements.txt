@@ -1,18 +1,18 @@
-# Core scientific Python stack
+#Core
 pandas
 numpy
 scipy
 
-# Plotting / EDA
+#Plotting
 matplotlib
 seaborn
 
-# Modeling
+#Modeling
 scikit-learn
 statsmodels
 
-# BRFSS XPT reading
+#BRFSS XPT reading
 pyreadstat
 
-# Notebook support (optional but recommended)
+#Notebook 
 jupyter

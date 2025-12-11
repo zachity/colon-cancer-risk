@@ -1,7 +1,7 @@
 @echo off
-echo ===========================================
-echo   Colon Cancer Data Curation Pipeline (Windows)
-echo ===========================================
+
+echo   Colon Cancer Data Curation Pipeline 
+
 
 set RAW_DIR=data\raw
 set PROC_DIR=data\processed
